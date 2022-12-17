@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-12 mt-2">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div *ngFor="let item of post" class="col">
+                    <div class="card h-100">
+                        <img src="https://placeimg.com/640/300/nature" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a [routerLink]="['post-single',item.id,item.title]">
+                                <h5 class="card-title">{{item.title}}</h5>
+                            </a>
+                            <p class="card-text">{{item.body}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
