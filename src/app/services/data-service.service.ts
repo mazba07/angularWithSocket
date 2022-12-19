@@ -34,7 +34,7 @@ export class DataServiceService {
       );
   }
 
-  postData(url: string, auth: boolean=false, postData: object): Observable<any> {
+  postData(url: string, auth: boolean = false, postData: object): Observable<any> {
     var url = url;
     var setHeaders: any;
 
@@ -53,4 +53,5 @@ export class DataServiceService {
         catchError(this.handleError)
       );
   }
+
 }
