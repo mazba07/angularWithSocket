@@ -17,10 +17,12 @@ expFn.addNewPost = function (req, res, next) {
     var postData = {
         "id": d.getTime(),
         "title": "top 1 place",
-        "photo": "",
         "body": ""
     }
     db.push("post", postData);
+
+    res.app.set("gHead",d.getTime());
+
 
     res.json(sendJson(1, "Post added successfully"))
 }
