@@ -41,8 +41,7 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-app.set("gHead", "ini");
-console.log(app.get("gHead"));
+// app.set("gHead", "ini");
 
 
 server.listen(3000, () => {

@@ -21,8 +21,8 @@ expFn.addNewPost = function (req, res, next) {
     }
     db.push("post", postData);
 
-    res.app.set("gHead",d.getTime());
-
+    // var io = req.app.get("gHead");
+    // console.log(io);
 
     res.json(sendJson(1, "Post added successfully"))
 }
