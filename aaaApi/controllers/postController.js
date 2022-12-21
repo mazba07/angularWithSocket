@@ -1,3 +1,4 @@
+const formidable = require('formidable');
 const FSDB = require("file-system-db");
 const db = new FSDB("./db.json", false);
 
@@ -13,18 +14,33 @@ function sendJson(success, message, data = []) {
 }
 
 expFn.addNewPost = function (req, res, next) {
+    const form = formidable({ multiples: true });
     const d = new Date();
-    var postData = {
-        "id": d.getTime(),
-        "title": "top 1 place",
-        "body": ""
-    }
-    db.push("post", postData);
 
-    // var io = req.app.get("gHead");
-    // console.log(io);
+    form.parse(req, (err, fields, files) => {
+        if (err) {
+            next(err);
+            return;
+        }
+        var postData = {
+            "id": d.getTime(),
+            "title": fields.title,
+            "body": fields.body
+        }
+        // db.push("post", postData);
+        // res.json({ fields, files });
 
-    res.json(sendJson(1, "Post added successfully"))
+    });
+
+
+
+    // var io = req.app.get('socketIo');
+    // io.emit('addedPostHome', postData);
+
+    res.json(sendJson(1, "Post added successfully",fields))
+
+
+
 }
 
 expFn.getAllPost = function (req, res, next) {

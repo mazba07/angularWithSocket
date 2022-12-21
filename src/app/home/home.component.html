@@ -1,10 +1,29 @@
 <div class="container">
+    <div class="row mt-2 mb-2">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="text-center">Add new post</h4>
+                    <form #newPost="ngForm" (ngSubmit)="addNewPost(newPost)">
+                        <div class="mb-3">
+                            <label class="form-label">Ttile</label>
+                            <input type="text" name="title" class="form-control" ngModel>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">Body</label>
+                            <textarea name="body" class="form-control" rows="3" ngModel></textarea>
+                          </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+              </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-12 col-md-12 mt-2">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div *ngFor="let item of post" class="col">
                     <div class="card h-100">
-                        <img src="https://placeimg.com/640/300/nature" class="card-img-top" alt="...">
                         <div class="card-body">
                             <a [routerLink]="['post-single',item.id,item.title]">
                                 <h5 class="card-title">{{item.title}}</h5>

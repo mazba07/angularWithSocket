@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { DataServiceService } from '../services/data-service.service';
+import { SocketServiceService } from '../services/socket-service.service';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +11,39 @@ import { DataServiceService } from '../services/data-service.service';
 export class HomeComponent {
   post: any = [];
 
-  constructor(private dataService: DataServiceService) {
+  constructor(private dataService: DataServiceService, private socketService: SocketServiceService) {
     this.fetchAllPost();
   }
 
   fetchAllPost() {
-    var url = 'https://jsonplaceholder.typicode.com/posts';
+    var url = 'http://localhost:3000/get-all-post';
     this.dataService.getData(url)
       .subscribe(data => {
-        this.post = data.body;
+        console.log(data);
+        this.post = data.body.data;
+      });
+
+    this.socketService.listen('addedPostHome').subscribe((data) => {
+      console.log(data);
+      this.post.push(data);
+    });
+  }
+
+  addNewPost(newPost: NgForm) {
+    var postData: object = {
+      "title": newPost.value.title,
+      "body": newPost.value.body
+    };
+    console.log("form submited and data are: " + postData);
+    var url = "http://localhost:3000/add-new-post";
+    this.dataService.postData(url, false, postData)
+      .subscribe(data => {
+        console.log(data);
+        if (data) {
+          newPost.reset();
+        } else {
+          console.log("Somethin went wrong");
+        }
       });
   }
 
