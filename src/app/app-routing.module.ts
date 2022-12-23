@@ -6,7 +6,7 @@ import { PostSingleComponent } from './post-single/post-single.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'post-single/:id/:title', component: PostSingleComponent },
+  { path: 'post-single/:id', component: PostSingleComponent },
   { path: 'about', component: AboutComponent }
 ];
 

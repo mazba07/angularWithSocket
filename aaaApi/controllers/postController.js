@@ -21,15 +21,51 @@ expFn.addNewPost = function (req, res, next) {
         "body": req.body.body
     }
     db.push("post", postData);
+
     var io = req.app.get('socketIo');
     io.emit('addedPostHome', postData);
 
-    res.json(sendJson(1, "Post added successfully"))
+    res.json(sendJson(1, "Post added successfully"));
 }
 
 expFn.getAllPost = function (req, res, next) {
     var post = db.get("post");
-    res.json(sendJson(1, "All post are here", post))
+    res.json(sendJson(1, "All post are here", post));
+}
+
+expFn.singlePost = function (req, res, next) {
+    var data = {};
+    var id = req.params.id;
+    var post = db.get("post");
+    for (let item of post) {
+        if (item.id == id) {
+            data.singlePost = item;
+        }
+    }
+
+    var allComments = db.get("comment");
+    var singlePostComments = [];
+    for (let item of allComments) {
+        if (item.id == id) {
+            singlePostComments.push(data.comments = item);
+        }
+    }
+    data.comments = singlePostComments;
+
+    res.json(sendJson(1, "Single post is here", data));
+}
+
+expFn.postNewComment = function (req, res, next) {
+    var postData = {
+        "id": parseInt(req.body.id),
+        "commetnBody": req.body.commetnBody,
+    }
+    db.push("comment", postData);
+
+    var io = req.app.get('socketIo');
+    io.emit('postComment-' + req.body.id, postData);
+
+    res.json(sendJson(1, "Comment posted successfully"));
 }
 
 module.exports = expFn;

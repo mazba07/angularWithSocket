@@ -13,5 +13,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/add-new-post', urlencodedParser, postController.addNewPost);
 router.get('/get-all-post', postController.getAllPost);
+router.get('/single-post/:id', postController.singlePost);
+router.post('/post-new-comment', urlencodedParser, postController.postNewComment);
 
 module.exports = router;

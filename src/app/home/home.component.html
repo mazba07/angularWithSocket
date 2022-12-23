@@ -1,36 +1,39 @@
 <div class="container">
     <div class="row">
-        <div class="col-12 col-md-4 mt-3">
-            <div class="card">
+        <div class="col-12 col-md-8 offset-md-2">
+            <div class="card text-center mt-2">
+                <div class="card-header">
+                    <h5>Add new post</h5>
+                </div>
                 <div class="card-body">
-                    <h4 class="text-center">Add new post</h4>
                     <form #newPost="ngForm" (ngSubmit)="addNewPost(newPost)">
                         <div class="mb-3">
-                            <label class="form-label">Ttile</label>
-                            <input type="text" name="title" class="form-control" ngModel>
-                          </div>
-                          <div class="mb-3">
-                            <label class="form-label">Body</label>
-                            <textarea name="body" class="form-control" rows="3" ngModel></textarea>
-                          </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                            <input type="text" name="title" placeholder="Title" class="form-control shadow-none" ngModel>
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="body" class="form-control shadow-none" rows="3" ngModel placeholder="Body"></textarea>
+                        </div>
+                        <p class="text-end">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </p>
                     </form>
                 </div>
-              </div>
-        </div>
-        <div class="col-12 col-md-8 mt-3">
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div *ngFor="let item of post" class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <a [routerLink]="['post-single',item.id,item.title]">
-                                <h5 class="card-title">{{item.title}}</h5>
-                            </a>
-                            <p class="card-text">{{item.body}}</p>
-                        </div>
-                    </div>
+            </div>
+            
+            <div *ngFor="let item of post" class="card text-center mt-4">
+                <div class="card-header">
+                    <a [routerLink]="['post-single',item.id]" class="text-decoration-none">
+                        <h5 class="card-title">{{item.title}}</h5>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{item.body}}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    {{item.id | dateFormat}}
                 </div>
             </div>
+
         </div>
     </div>
 </div>

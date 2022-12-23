@@ -6,8 +6,8 @@ import { AboutComponent } from './about/about.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CommentsComponent } from './comments/comments.component';
 import { HomeComponent } from './home/home.component';
+import { DateFormatPipe } from './pipes/date-format.pipe';
 import { PostSingleComponent } from './post-single/post-single.component';
 
 @NgModule({
@@ -16,7 +16,7 @@ import { PostSingleComponent } from './post-single/post-single.component';
     AboutComponent,
     HomeComponent,
     PostSingleComponent,
-    CommentsComponent
+    DateFormatPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
