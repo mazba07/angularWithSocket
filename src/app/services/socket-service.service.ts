@@ -27,4 +27,10 @@ export class SocketServiceService {
     this.socket.emit(eventName, data);
   }
 
+  close() {
+    setTimeout(() => {
+      this.socket.close();
+    }, 2000);
+  }
+
 }

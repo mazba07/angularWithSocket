@@ -15,6 +15,7 @@ export class HomeComponent {
     this.fetchAllPost();
   }
 
+
   fetchAllPost() {
     var url = 'http://localhost:3000/get-all-post';
     this.dataService.getData(url)
@@ -26,7 +27,8 @@ export class HomeComponent {
     this.socketService.listen('addedPostHome').subscribe((data) => {
       console.log(data);
       this.post.push(data);
-    });
+    });    
+
   }
 
   addNewPost(newPost: NgForm) {
@@ -34,7 +36,6 @@ export class HomeComponent {
       "title": newPost.value.title,
       "body": newPost.value.body
     };
-    console.log("form submited and data are: " + postData);
     var url = "http://localhost:3000/add-new-post";
     this.dataService.postData(url, false, postData)
       .subscribe(data => {

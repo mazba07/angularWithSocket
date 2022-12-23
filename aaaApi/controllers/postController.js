@@ -14,33 +14,17 @@ function sendJson(success, message, data = []) {
 }
 
 expFn.addNewPost = function (req, res, next) {
-    const form = formidable({ multiples: true });
     const d = new Date();
+    var postData = {
+        "id": d.getTime(),
+        "title": req.body.title,
+        "body": req.body.body
+    }
+    db.push("post", postData);
+    var io = req.app.get('socketIo');
+    io.emit('addedPostHome', postData);
 
-    form.parse(req, (err, fields, files) => {
-        if (err) {
-            next(err);
-            return;
-        }
-        var postData = {
-            "id": d.getTime(),
-            "title": fields.title,
-            "body": fields.body
-        }
-        // db.push("post", postData);
-        // res.json({ fields, files });
-
-    });
-
-
-
-    // var io = req.app.get('socketIo');
-    // io.emit('addedPostHome', postData);
-
-    res.json(sendJson(1, "Post added successfully",fields))
-
-
-
+    res.json(sendJson(1, "Post added successfully"))
 }
 
 expFn.getAllPost = function (req, res, next) {
