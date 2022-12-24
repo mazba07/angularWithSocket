@@ -32,8 +32,7 @@ export class PostSingleComponent {
       });
 
     this.socketService.listen('postComment-' + id).subscribe((data) => {
-      console.log(data);
-      this.comments.push(data);
+      this.fetchSinglePostWithAllComments();
     });
   }
 

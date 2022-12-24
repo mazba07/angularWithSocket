@@ -18,11 +18,17 @@
                     <h6 class="card-title">Comments</h6>
                 </div>
                 <div class="card-body">
-                    <div *ngFor="let item of comments" class="alert alert-info" role="alert">
-                        <p class="text-start"> <strong>Anonymous: </strong>
-                            <span class="small">{{item.commetnBody}}</span>
-                        </p>
+                    <div *ngIf="comments | isAvailable; else commentsNotFound">
+                        <div *ngFor="let item of comments" class="alert alert-info" role="alert">
+                            <p class="text-start"> <strong>Anonymous: </strong>
+                                <span class="small">{{item.commetnBody}}</span>
+                            </p>
+                        </div>
                     </div>
+                    <ng-template #commentsNotFound>
+                        <p class="text-center">No comments found</p>
+                    </ng-template>
+                    
 
                     <form #newPostComment="ngForm" (ngSubmit)="addNewComment(newPostComment)">
                         <div class="mb-3">
