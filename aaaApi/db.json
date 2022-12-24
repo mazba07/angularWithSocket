@@ -34,6 +34,16 @@
             "id": 1671809128229,
             "title": "CommonJS or AMD dependencies can cause optimization bailouts.",
             "body": "Warning: /Applications/XAMPP/xamppfiles/htdocs/Test_match/angularWithSocket/src/app/home/home.component.ts depends on 'lodash'. CommonJS or AMD dependencies can cause optimization bailouts.\nFor more info see: https://angular.io/guide/build#configuring-commonjs-dependencies"
+        },
+        {
+            "id": 1671876039416,
+            "title": "Get started with Bootstrap",
+            "body": "Get started by including Bootstrap’s production-ready CSS and JavaScript via CDN without the need for any build steps. See it in practice with this Bootstrap CodePen demo."
+        },
+        {
+            "id": 1671876720344,
+            "title": "JavaScript Array reverse()",
+            "body": "Definition and Usage\nThe reverse() method reverses the order of the elements in an array.\n\nThe reverse() method overwrites the original array."
         }
     ],
     "comment": [
@@ -144,6 +154,70 @@
         {
             "id": 1671791693612,
             "commetnBody": "jio"
+        },
+        {
+            "id": 1671791612600,
+            "commetnBody": "Hello word"
+        },
+        {
+            "id": 1671791612600,
+            "commetnBody": "hi"
+        },
+        {
+            "id": 1671791612600,
+            "commetnBody": "lol\n"
+        },
+        {
+            "id": 1671809128229,
+            "commetnBody": "hello ssr"
+        },
+        {
+            "id": 1671809128229,
+            "commetnBody": "hi"
+        },
+        {
+            "id": 1671809128229,
+            "commetnBody": "is it working?\nlol"
+        },
+        {
+            "id": 1671876039416,
+            "commetnBody": "first comment"
+        },
+        {
+            "id": 1671876039416,
+            "commetnBody": "second comment"
+        },
+        {
+            "id": 1671876039416,
+            "commetnBody": "nill"
+        },
+        {
+            "id": 1671809128229,
+            "commetnBody": "hi"
+        },
+        {
+            "id": 1671876039416,
+            "commetnBody": "koko"
+        },
+        {
+            "id": 1671876720344,
+            "commetnBody": "It is working for me"
+        },
+        {
+            "id": 1671809128229,
+            "commetnBody": "ko"
+        },
+        {
+            "id": 1671876720344,
+            "commetnBody": "hi"
+        },
+        {
+            "id": 1671791693612,
+            "commetnBody": "lo"
+        },
+        {
+            "id": 1671876720344,
+            "commetnBody": "jo"
         }
     ]
 }

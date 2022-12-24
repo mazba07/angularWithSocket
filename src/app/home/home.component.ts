@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import * as _ from 'lodash';
 import { DataServiceService } from '../services/data-service.service';
 import { SocketServiceService } from '../services/socket-service.service';
 
@@ -16,20 +15,20 @@ export class HomeComponent {
   constructor(private dataService: DataServiceService, private socketService: SocketServiceService) {
     this.fetchAllPost();
   }
-  
+
   fetchAllPost() {
     var url = 'http://localhost:3000/get-all-post';
     this.dataService.getData(url)
       .subscribe(data => {
         console.log(data);
         this.post = data.body.data;
-        this.post = _.orderBy(this.post, ['id'], ['desc']);
+        this.post = this.post.reverse();
       });
 
     this.socketService.listen('addedPostHome').subscribe((data) => {
       console.log(data);
       this.post.push(data);
-      this.post = _.orderBy(this.post, ['id'], ['desc']);
+      this.post = this.post.reverse();
     });
 
   }
