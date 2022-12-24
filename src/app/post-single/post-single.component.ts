@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { parseInt } from 'lodash';
 import { DataServiceService } from '../services/data-service.service';
 import { SocketServiceService } from '../services/socket-service.service';
 
