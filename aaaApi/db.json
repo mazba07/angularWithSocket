@@ -44,6 +44,16 @@
             "id": 1671876720344,
             "title": "JavaScript Array reverse()",
             "body": "Definition and Usage\nThe reverse() method reverses the order of the elements in an array.\n\nThe reverse() method overwrites the original array."
+        },
+        {
+            "id": 1672030534968,
+            "title": "Looking for PHP/CodeIgniter/LAMP Stack Developer",
+            "body": "Project is a LAMP stack. We are using CodeIgniter/JavaScript and HTML. We've got a lot of old code and mostly in PHP though we even have some in C that we don't really touch anymore. We use MariaDB.\nWe are using Trello for task management, and Gitlab.\nYou must speak in English fluently, and have some overlap at PST for communication with team.\nWe are really looking for a reliable person to work on this project for a long term."
+        },
+        {
+            "id": 1672030561707,
+            "title": "PHP + AngularJS developer",
+            "body": "We need a full stack developer with experience in PHP (Codeigniter) + AngularJS\n\nIt is important that you have experience in both AngularJS & PHP\n\nPlease bid for 40 hours.\n\nIf this works out then we can offer long term contract."
         }
     ],
     "comment": [
@@ -58,6 +68,18 @@
         {
             "id": 1671876720344,
             "commetnBody": "lol"
+        },
+        {
+            "id": 1672030561707,
+            "commetnBody": "hi"
+        },
+        {
+            "id": 1672030561707,
+            "commetnBody": "hello"
+        },
+        {
+            "id": 1672030561707,
+            "commetnBody": "ki"
         }
     ]
 }
