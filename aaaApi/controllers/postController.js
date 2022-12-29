@@ -1,5 +1,6 @@
 const formidable = require('formidable');
 const FSDB = require("file-system-db");
+const exp = require('constants');
 const db = new FSDB("./db.json", false);
 
 var expFn = {};
@@ -31,6 +32,24 @@ expFn.addNewPost = function (req, res, next) {
 expFn.getAllPost = function (req, res, next) {
     var post = db.get("post");
     res.json(sendJson(1, "All post are here", post));
+}
+
+expFn.deletePost = function (req, res, next) {
+    var id = req.params.id;
+    var post = db.get("post");
+    // db.delete("post");
+
+    // for (let item of post) {
+    //     if (item.id != parseInt(id)) {
+    //         db.push("post", item);
+    //     }
+    // }
+
+
+    db.delete("post.id.1672134756078");
+
+
+    res.json(sendJson(1, "Post has been deleted", post));
 }
 
 expFn.singlePost = function (req, res, next) {
@@ -67,5 +86,7 @@ expFn.postNewComment = function (req, res, next) {
 
     res.json(sendJson(1, "Comment posted successfully"));
 }
+
+
 
 module.exports = expFn;

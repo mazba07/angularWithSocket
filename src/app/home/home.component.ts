@@ -22,15 +22,18 @@ export class HomeComponent {
       .subscribe(data => {
         console.log(data);
         this.post = data.body.data;
-        this.post = this.post.reverse();
+        if (this.post) {
+          this.post = this.post.reverse();
+        }
       });
 
     this.socketService.listen('addedPostHome').subscribe((data) => {
       console.log(data);
       this.post.push(data);
-      this.post = this.post.reverse();
+      if (this.post) {
+        this.post = this.post.reverse();
+      }
     });
-
   }
 
   addNewPost(newPost: NgForm) {
@@ -47,6 +50,14 @@ export class HomeComponent {
         } else {
           console.log("Somethin went wrong");
         }
+      });
+  }
+
+  deletePost(id: any) {
+    var url = 'http://localhost:3000/delete-post/' + id;
+    this.dataService.getData(url)
+      .subscribe(data => {
+        this.fetchAllPost();
       });
   }
 

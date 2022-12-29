@@ -1,85 +1,10 @@
 {
     "post": [
         {
-            "id": 1671789278104,
-            "title": "Top 10 place in world",
-            "body": "Since the offcanvas panel is conceptually a modal dialog, be sure to add aria-labelledby=\"...\"—referencing the offcanvas title—to .offcanvas. Note that you don’t need to add role=\"dialog\" since we already add it via JavaScript."
-        },
-        {
-            "id": 1671789296322,
-            "title": "Top 9 place in world",
-            "body": "As part of Bootstrap’s evolving CSS variables approach, offcanvas now uses local CSS variables on .offcanvas for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too."
-        },
-        {
-            "id": 1671789730216,
-            "title": "Using grid markup ",
-            "body": "Cards assume no specific width to start, so they’ll be 100% wide unless otherwise stated. You can change this as needed with custom CSS, grid classes, grid Sass mixins, or utilities."
-        },
-        {
-            "id": 1671791000524,
-            "title": "Text wrapping and overflow ",
-            "body": "Note that we don’t provide utility classes for justified text. While, aesthetically, justified text might look more appealing, it does make word-spacing more random and therefore harder to read."
-        },
-        {
-            "id": 1671791612600,
-            "title": "Word break ",
-            "body": "Prevent long strings of text from breaking your components’ layout by using .text-break to set word-wrap: break-word and word-break: break-word. We use word-wrap instead of the more common overflow-wrap for wider browser support, and add the deprecated word-break: break-word to avoid issues with flex containers.\n\n"
-        },
-        {
-            "id": 1671791693612,
-            "title": "Font size ",
-            "body": "Quickly change the font-size of text. While our heading classes (e.g., .h1–.h6) apply font-size, font-weight, and line-height, these utilities only apply font-size. Sizing for these utilities matches HTML’s heading elements, so as the number increases, their size decreases.\n\n"
-        },
-        {
-            "id": 1671809128229,
-            "title": "CommonJS or AMD dependencies can cause optimization bailouts.",
-            "body": "Warning: /Applications/XAMPP/xamppfiles/htdocs/Test_match/angularWithSocket/src/app/home/home.component.ts depends on 'lodash'. CommonJS or AMD dependencies can cause optimization bailouts.\nFor more info see: https://angular.io/guide/build#configuring-commonjs-dependencies"
-        },
-        {
-            "id": 1671876039416,
-            "title": "Get started with Bootstrap",
-            "body": "Get started by including Bootstrap’s production-ready CSS and JavaScript via CDN without the need for any build steps. See it in practice with this Bootstrap CodePen demo."
-        },
-        {
-            "id": 1671876720344,
-            "title": "JavaScript Array reverse()",
-            "body": "Definition and Usage\nThe reverse() method reverses the order of the elements in an array.\n\nThe reverse() method overwrites the original array."
-        },
-        {
-            "id": 1672030534968,
-            "title": "Looking for PHP/CodeIgniter/LAMP Stack Developer",
-            "body": "Project is a LAMP stack. We are using CodeIgniter/JavaScript and HTML. We've got a lot of old code and mostly in PHP though we even have some in C that we don't really touch anymore. We use MariaDB.\nWe are using Trello for task management, and Gitlab.\nYou must speak in English fluently, and have some overlap at PST for communication with team.\nWe are really looking for a reliable person to work on this project for a long term."
-        },
-        {
-            "id": 1672030561707,
-            "title": "PHP + AngularJS developer",
-            "body": "We need a full stack developer with experience in PHP (Codeigniter) + AngularJS\n\nIt is important that you have experience in both AngularJS & PHP\n\nPlease bid for 40 hours.\n\nIf this works out then we can offer long term contract."
+            "id": 1672134756078,
+            "title": "Install Package",
+            "body": "File System DB's size footprint is tiny, making the installation process really quick and easy.\n\nnpm install file-system-db --save\n\n"
         }
     ],
-    "comment": [
-        {
-            "id": 1671876720344,
-            "commetnBody": "Hello"
-        },
-        {
-            "id": 1671876720344,
-            "commetnBody": "Second comment "
-        },
-        {
-            "id": 1671876720344,
-            "commetnBody": "lol"
-        },
-        {
-            "id": 1672030561707,
-            "commetnBody": "hi"
-        },
-        {
-            "id": 1672030561707,
-            "commetnBody": "hello"
-        },
-        {
-            "id": 1672030561707,
-            "commetnBody": "ki"
-        }
-    ]
+    "comment": []
 }
