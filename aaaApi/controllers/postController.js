@@ -1,6 +1,5 @@
 const formidable = require('formidable');
 const FSDB = require("file-system-db");
-const exp = require('constants');
 const db = new FSDB("./db.json", false);
 
 var expFn = {};
